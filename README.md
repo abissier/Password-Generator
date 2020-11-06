@@ -4,5 +4,4 @@ This password generator is deisgned to take user input and create a password tha
 
 link: https://abissier.github.io/Password-Generator/
 
-![Alt text](screencap.jpg?raw=true "screenshot")
-
+[![screencap.png](https://i.postimg.cc/jS21SXWv/screencap.png)](https://postimg.cc/DSV6C1Pb)
