@@ -1,61 +1,75 @@
 // Assignment Code
+
 var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
 // Get user input from prompts
+// function getUserInfo () {
 
-var pLength = prompt("Please enter length of password you would like generated (8-126 characters)");
-var pLower = confirm("Would you like to include lower case letters in the passord?");
-var pUpper = confirm("Would you like to include upper case letters in the passord?");
-var pNumeric = confirm("Would you like to include numeric characters letters in the passord?");
-var pSpecial = confirm("Would you like to include special characters in the passord?");
-
-
-//length prompt btw 8 characters and no more than 128 characters
-
-if (pLength >= 8) {
-    console.log("length" + pLength);
-} else {
-
-    console.log("Please enter a valid number between 8-126");
-
-}
+function getRequirements() {
+    var passwordlength = prompt("How long is the password? 8-128");
+    var upperCase = confirm("Do you want uppercase letters?");
+    var lowerCase = confirm("Do you want lowercase letters?");
+    var Numbers = confirm("Do you want numbers?");
+    var Symbols = confirm("Do you want symbols?");
+    console.log("Password Length: " + passwordlength);
+    console.log("Contains Uppercase: " + upperCase);
+    console.log("Contains Lowercase: " + lowerCase);
+    console.log("Contains numbers: " + Numbers);
+    console.log("Contains symbols: " + Symbols);
 
 
-//character type prompt lowercase, uppercase, numeric, and/or special characters w at least one type seclected 
-if (pLower === true) {
-    function getRandomLower() {
-        return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+    // Write password to the #password input
+    function writePassword(passwordlength, upperCase, lowerCase, Numbers, Symbols) {
+        var password = generatePassword();
+        var passwordText = document.querySelector("#password");
+
+        passwordText.value = password;
     }
+
+    // Add event listener to generate button
+    generateBtn.addEventListener("click", writePassword);
+
+    //length prompt btw 8 characters and no more than 128 characters
+
+    if (passwordlength >= 8 && passwordlength <= 128) {
+        console.log("length" + passwordlength);
+    } else {
+        passwordlength = prompt("Please enter number bewtween 8-128");
+    }
+
+    //character type prompt lowercase, uppercase, numeric, and/or special characters w at least one type seclected 
+    if (lowerCase === true) {
+        function getRandomLower() {
+            return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+        }
+        console.log(getRandomLower());
+    }
+
+    if (upperCase === true) {
+        function getRandomUpper() {
+            return String.fromCharCode(Math.floor(Math.random() * 26) + 64);
+        }
+        console.log(getRandomUpper());
+    }
+
+    if (Numbers === true) {
+        function getRandomNumber() {
+            return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+        }
+        console.log(getRandomNumber());
+    }
+
+    if (Symbols === true) {
+        function getRandomSymbol() {
+            const symbols = "!@#$%[],.'";
+            return symbols[Math.floor(Math.random() * symbols.length)];
+        }
+        console.log(getRandomSymbol());
+    }
+
+
+// for loop so password characters matches scharacter length 
+for (var i = 0; i < passwordlength; i++) {
+    document.querySelector("#password").innerHTML = password;
+}
 }
 
-if (pUpper === true) {
-    function getRandomUpper() {
-        return String.fromCharCode(Math.floor(Math.random() * 26) + 64);
-    }
-}
-
-if (pNumeric === true) {
-    function getRandomNumber() {
-        return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-    }
-}
-
-if (pSpecial === true) {
-    function getRandomSybol() {
-        const symbols = "!@#$%"
-        return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-    }
-}
