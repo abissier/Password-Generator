@@ -3,6 +3,10 @@
 This password generator is designed to take user input and create a password that matches 
 the selected criteria. 
 ```
+
+### Technologies Used
+Javascript, HTML, and CSS. 
+
 ### Deployed Link
 ```
 link: https://abissier.github.io/Password-Generator/
