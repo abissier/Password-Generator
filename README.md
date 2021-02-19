@@ -28,4 +28,6 @@ https://abissier.github.io/Password-Generator/
 ### Contact 
 Questions? 
 
-Audrey Bissiere-Grote, abissieregrote@gmail.com, https://www.linkedin.com/in/audrey-bissiere-grote/
+* Audrey Bissiere-Grote
+* Email: abissieregrote@gmail.com
+* LinkedIn: https://www.linkedin.com/in/audrey-bissiere-grote/
