@@ -8,6 +8,7 @@
 * [Project Link](#project-Link)
 * [Contact](#contact)
 
+### Description
 ```
 This password generator is designed to take user input and create a password that matches 
 the selected criteria. 
